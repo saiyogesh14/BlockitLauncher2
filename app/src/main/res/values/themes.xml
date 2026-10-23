@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BlockitLauncher" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/blockit_orange</item>
+        <item name="colorPrimaryVariant">@color/blockit_orange_dim</item>
+        <item name="colorOnPrimary">@color/blockit_white</item>
+        <item name="colorSecondary">@color/blockit_charcoal</item>
+        <item name="colorOnSecondary">@color/blockit_white</item>
+        <item name="android:colorBackground">@color/blockit_white</item>
+        <item name="android:windowBackground">@color/blockit_white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

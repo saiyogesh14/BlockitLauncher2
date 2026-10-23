@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M0,0h108v108h-108z"/>
+    <!-- blockit logo squares -->
+    <path android:fillColor="#E84A0C"
+        android:pathData="M20,38h16v16h-16z"/>
+    <path android:fillColor="#E84A0C"
+        android:pathData="M40,38h8v8h-8z"/>
+    <path android:fillColor="#E84A0C"
+        android:pathData="M40,50h8v4h-8z"/>
+    <path android:fillColor="#1A1A1A"
+        android:pathData="M54,38h8v32h-8z"/>
+    <path android:fillColor="#1A1A1A"
+        android:pathData="M54,50h16v8h-16z"/>
+    <path android:fillColor="#1A1A1A"
+        android:pathData="M66,38h16v16h-16z"/>
+    <path android:fillColor="#1A1A1A"
+        android:pathData="M66,54h16v16h-16z"/>
+    <!-- dot accent -->
+    <path android:fillColor="#E84A0C"
+        android:pathData="M72,44m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0"/>
+</vector>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="clock_text_size">80sp</dimen>
+    <dimen name="date_text_size">14sp</dimen>
+    <dimen name="dock_height">100dp</dimen>
+    <dimen name="dock_icon_size">56dp</dimen>
+    <dimen name="widget_area_min_height">140dp</dimen>
+    <dimen name="app_icon_size">52dp</dimen>
+    <dimen name="app_label_size">11sp</dimen>
+</resources>

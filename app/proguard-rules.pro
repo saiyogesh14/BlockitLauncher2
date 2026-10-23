@@ -1,0 +1,2 @@
+-keep class com.blockit.launcher.** { *; }
+-keepattributes *Annotation*

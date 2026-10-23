@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blockit_white">
+
+    <!-- Status bar spacer (height set in code) -->
+    <View
+        android:id="@+id/statusBarSpacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ── CLOCK centered at top ── -->
+    <LinearLayout
+        android:id="@+id/clockBlock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/statusBarSpacer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/clockDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textSize="80sp"
+            android:textColor="@color/blockit_near_black"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:letterSpacing="-0.04"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:id="@+id/dateDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Monday, 1 Jan"
+            android:textSize="14sp"
+            android:textColor="@color/blockit_dark_gray"
+            android:letterSpacing="0.01" />
+
+    </LinearLayout>
+
+    <!-- ── WIDGET AREA (scrollable, fills middle) ── -->
+    <ScrollView
+        android:id="@+id/widgetScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/clockBlock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dock">
+
+        <LinearLayout
+            android:id="@+id/widgetContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="8dp" />
+
+    </ScrollView>
+
+    <!-- ── DOCK: 4 pinned apps at bottom ── -->
+    <LinearLayout
+        android:id="@+id/dock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="16dp"
+        android:paddingHorizontal="8dp"
+        android:background="@drawable/bg_dock"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:id="@+id/dockApp1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dockIcon1"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:id="@+id/dockLabel1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/blockit_charcoal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dockApp2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dockIcon2"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:id="@+id/dockLabel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/blockit_charcoal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dockApp3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dockIcon3"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:id="@+id/dockLabel3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/blockit_charcoal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/dockApp4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/dockIcon4"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:scaleType="fitCenter" />
+                <TextView
+                    android:id="@+id/dockLabel4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textSize="10sp"
+                    android:textColor="@color/blockit_charcoal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="center" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Long-press context menu (hidden by default) -->
+    <LinearLayout
+        android:id="@+id/contextMenu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_context_menu"
+        android:elevation="8dp"
+        android:visibility="gone"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/menuAllApps"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:text="All Apps"
+            android:textSize="15sp"
+            android:textColor="@color/blockit_near_black"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/menuAddWidget"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:text="Add Widget"
+            android:textSize="15sp"
+            android:textColor="@color/blockit_near_black"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/menuToggleStatusBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:text="Hide Status Bar"
+            android:textSize="15sp"
+            android:textColor="@color/blockit_near_black"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/menuSettings"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            android:text="Settings"
+            android:textSize="15sp"
+            android:textColor="@color/blockit_near_black"
+            android:background="?attr/selectableItemBackground" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
